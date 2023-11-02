@@ -41,11 +41,12 @@ namespace WorkWithStrings
             // 
             // textBoxSource
             // 
+            this.textBoxSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxSource.Location = new System.Drawing.Point(20, 49);
             this.textBoxSource.Multiline = true;
             this.textBoxSource.Name = "textBoxSource";
             this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSource.Size = new System.Drawing.Size(447, 130);
+            this.textBoxSource.Size = new System.Drawing.Size(450, 150);
             this.textBoxSource.TabIndex = 1;
             // 
             // btProcess
@@ -70,9 +71,10 @@ namespace WorkWithStrings
             // 
             // textBoxResult
             // 
+            this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxResult.Location = new System.Drawing.Point(20, 273);
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(447, 124);
+            this.textBoxResult.Size = new System.Drawing.Size(450, 150);
             this.textBoxResult.TabIndex = 6;
             this.textBoxResult.Text = "";
             // 
@@ -105,12 +107,13 @@ namespace WorkWithStrings
             this.tbMessage.ReadOnly = true;
             this.tbMessage.Size = new System.Drawing.Size(447, 20);
             this.tbMessage.TabIndex = 9;
+            this.tbMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 480);
+            this.ClientSize = new System.Drawing.Size(492, 441);
             this.Controls.Add(this.tbMessage);
             this.Controls.Add(this.cBLanguage);
             this.Controls.Add(this.lbLanguage);

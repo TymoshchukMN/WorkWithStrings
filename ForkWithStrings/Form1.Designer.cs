@@ -36,7 +36,7 @@ namespace WorkWithStrings
             this.rbCompText = new System.Windows.Forms.RadioButton();
             this.rbCheckSymbosl = new System.Windows.Forms.RadioButton();
             this.textBoxSource = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textComparable = new System.Windows.Forms.TextBox();
             this.btProcess = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxResult = new System.Windows.Forms.RichTextBox();
@@ -111,14 +111,14 @@ namespace WorkWithStrings
             this.textBoxSource.Size = new System.Drawing.Size(380, 130);
             this.textBoxSource.TabIndex = 1;
             // 
-            // textBox2
+            // textComparable
             // 
-            this.textBox2.Location = new System.Drawing.Point(420, 135);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(380, 130);
-            this.textBox2.TabIndex = 2;
+            this.textComparable.Location = new System.Drawing.Point(420, 135);
+            this.textComparable.Multiline = true;
+            this.textComparable.Name = "textComparable";
+            this.textComparable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textComparable.Size = new System.Drawing.Size(380, 130);
+            this.textComparable.TabIndex = 2;
             // 
             // btProcess
             // 
@@ -144,7 +144,7 @@ namespace WorkWithStrings
             // 
             this.textBoxResult.Location = new System.Drawing.Point(20, 325);
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(380, 101);
+            this.textBoxResult.Size = new System.Drawing.Size(780, 101);
             this.textBoxResult.TabIndex = 6;
             this.textBoxResult.Text = "";
             // 
@@ -152,11 +152,11 @@ namespace WorkWithStrings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 631);
+            this.ClientSize = new System.Drawing.Size(819, 631);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btProcess);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textComparable);
             this.Controls.Add(this.textBoxSource);
             this.Controls.Add(this.workType);
             this.Name = "Form1";
@@ -174,7 +174,7 @@ namespace WorkWithStrings
         private System.Windows.Forms.RadioButton rbCompText;
         private System.Windows.Forms.RadioButton rbCheckSymbosl;
         private System.Windows.Forms.TextBox textBoxSource;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textComparable;
         private System.Windows.Forms.Button btProcess;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cBLanguage;

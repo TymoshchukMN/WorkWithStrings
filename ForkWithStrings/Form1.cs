@@ -32,13 +32,13 @@ namespace WorkWithStrings
         {
             if (rbCompText.Checked)
             { 
-                textBox2.Enabled = true;
+                textComparable.Enabled = true;
                 lbLanguage.Enabled = false;
                 cBLanguage.Enabled = false;
             }
             else
             {
-                textBox2.Enabled = false;
+                textComparable.Enabled = false;
                 lbLanguage.Enabled = true;
                 cBLanguage.Enabled = true;
             }
@@ -52,7 +52,17 @@ namespace WorkWithStrings
                 MainLang lang = (MainLang)Enum.Parse(typeof(MainLang),
                     cBLanguage.Text.ToString());
                 BL.ProccesSymbols(textBoxSource.Text, lang, ref textBoxResult);
+                return;
+            }
+
+            if (rbCompText.Checked)
+            {
+                BL.CompareText(
+                    textBoxSource.Text,
+                    textComparable.Text,
+                    ref textBoxResult);
             }
         }
+    
     }
 }

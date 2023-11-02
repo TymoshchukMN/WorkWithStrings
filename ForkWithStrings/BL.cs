@@ -11,19 +11,77 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace WorkWithStrings
 {
     internal class BL
     {
-        public static void ProccesSymbols(
-            string str,
-            MainLang lang,
-            ref RichTextBox textBox)
+        private static void AppendText(
+            ref RichTextBox box,
+            string text,
+            Color color)
         {
-           Color defColor = Color.Black;
-           switch (lang)
-           {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+
+            box.SelectionColor = color;
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
+        }
+    
+        private static bool CheckEN(string s)
+        {
+            return Enum.IsDefined(typeof(Latin), s);
+        }
+
+        private static bool CheckRUUA(string s)
+        {
+            return Enum.IsDefined(typeof(Cirillic), s);
+        }
+
+        private static void ProcessCirillic(
+            ref RichTextBox textBox,
+            string str,
+            Color defColor)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (char.IsLetter(str[i]))
+                {
+                    if (CheckRUUA(str[i].ToString()))
+                    {
+                        AppendText(ref textBox, str[i].ToString(), defColor);
+                    }
+                    else
+                    {
+                        AppendText(ref textBox, str[i].ToString(), Color.Red);
+                    }
+                }
+                else
+                {
+                    AppendText(ref textBox, str[i].ToString(), defColor);
+                }
+            }
+        }
+
+        private static string RemoveUnnecessarySpaces(string s)
+        {
+            const RegexOptions options = RegexOptions.None;
+
+            var regex = new Regex("[ ]{2,}", options);
+
+            return regex.Replace(s, " ").Trim();
+        }
+
+        public static void ProccesSymbols(
+               string str,
+               MainLang lang,
+               ref RichTextBox textBox)
+        {
+            Color defColor = Color.Black;
+            switch (lang)
+            {
                 case MainLang.EN:
 
                     for (int i = 0; i < str.Length; i++)
@@ -32,7 +90,7 @@ namespace WorkWithStrings
                         {
                             if (CheckEN(str[i].ToString()))
                             {
-                                AppendText(ref textBox, str[i].ToString(), defColor);   
+                                AppendText(ref textBox, str[i].ToString(), defColor);
                             }
                             else
                             {
@@ -53,54 +111,31 @@ namespace WorkWithStrings
                     break;
                 case MainLang.UA:
 
-                    ProcessCirillic(ref textBox, str, defColor);                   
+                    ProcessCirillic(ref textBox, str, defColor);
 
                     break;
-           }
+            }
         }
 
-        private static void AppendText(
-            ref RichTextBox box,
-            string text,
-            Color color)
+        public static void CompareText(
+            string strSource,
+            string strComparable,
+            ref RichTextBox textBox)
         {
-            box.SelectionStart = box.TextLength;
-            box.SelectionLength = 0;
+            string general = RemoveUnnecessarySpaces(strSource);
+            string compare = RemoveUnnecessarySpaces(strComparable);
 
-            box.SelectionColor = color;
-            box.AppendText(text);
-            box.SelectionColor = box.ForeColor;
-        }
-    
+            Color defColor = Color.Black;
 
-        private static bool CheckEN(string s)
-        {
-            return Enum.IsDefined(typeof(Latin), s);
-        }
-
-        private static bool CheckRUUA(string s)
-        {
-            return Enum.IsDefined(typeof(Cirillic), s);
-        }
-
-        private static void ProcessCirillic(ref RichTextBox textBox, string str, Color defColor)
-        {
-            for (int i = 0; i < str.Length; i++)
+            for (int i = 0; i < general.Length; i++)
             {
-                if (char.IsLetter(str[i]))
+                if (strSource[i] == compare[i])
                 {
-                    if (CheckRUUA(str[i].ToString()))
-                    {
-                        AppendText(ref textBox, str[i].ToString(), defColor);
-                    }
-                    else
-                    {
-                        AppendText(ref textBox, str[i].ToString(), Color.Red);
-                    }
+                    AppendText(ref textBox, strSource[i].ToString(), defColor);
                 }
                 else
                 {
-                    AppendText(ref textBox, str[i].ToString(), defColor);
+                    AppendText(ref textBox, strSource[i].ToString(), Color.Red);
                 }
             }
         }

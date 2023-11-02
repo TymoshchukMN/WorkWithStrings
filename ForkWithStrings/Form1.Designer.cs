@@ -1,4 +1,4 @@
-﻿namespace ForkWithStrings
+﻿namespace WorkWithStrings
 {
     partial class Form1
     {

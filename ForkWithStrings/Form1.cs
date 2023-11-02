@@ -1,4 +1,4 @@
-﻿using ForkWithStrings.Enums;
+﻿using WorkWithStrings.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ForkWithStrings
+namespace WorkWithStrings
 {
     public partial class Form1 : Form
     {

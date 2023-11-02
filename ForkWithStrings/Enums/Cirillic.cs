@@ -7,7 +7,7 @@
 ///////////////////////////////////////
 
 
-namespace ForkWithStrings.Enums
+namespace WorkWithStrings.Enums
 {
     internal enum Cirillic : ushort
     {

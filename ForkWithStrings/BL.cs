@@ -6,16 +6,13 @@
 // Project: ForkWithStrings
 ///////////////////////////////////////
 
-using ForkWithStrings.Enums;
+using WorkWithStrings.Enums;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace ForkWithStrings
+namespace WorkWithStrings
 {
     internal class BL
     {
@@ -50,8 +47,14 @@ namespace ForkWithStrings
 
                     break;
                 case MainLang.RU:
+
+                    ProcessCirillic(ref textBox, str, defColor);
+
                     break;
                 case MainLang.UA:
+
+                    ProcessCirillic(ref textBox, str, defColor);                   
+
                     break;
            }
         }
@@ -71,8 +74,35 @@ namespace ForkWithStrings
     
 
         private static bool CheckEN(string s)
+        {
+            return Enum.IsDefined(typeof(Latin), s);
+        }
+
+        private static bool CheckRUUA(string s)
+        {
+            return Enum.IsDefined(typeof(Cirillic), s);
+        }
+
+        private static void ProcessCirillic(ref RichTextBox textBox, string str, Color defColor)
+        {
+            for (int i = 0; i < str.Length; i++)
             {
-                return Enum.IsDefined(typeof(Latin), s);
+                if (char.IsLetter(str[i]))
+                {
+                    if (CheckRUUA(str[i].ToString()))
+                    {
+                        AppendText(ref textBox, str[i].ToString(), defColor);
+                    }
+                    else
+                    {
+                        AppendText(ref textBox, str[i].ToString(), Color.Red);
+                    }
+                }
+                else
+                {
+                    AppendText(ref textBox, str[i].ToString(), defColor);
+                }
             }
         }
+    }
 }

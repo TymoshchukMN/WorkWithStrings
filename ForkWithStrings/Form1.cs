@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForkWithStrings.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +18,12 @@ namespace ForkWithStrings
             InitializeComponent();
         }
 
-        private void rbCheckSymbosl_CheckedChanged(object sender, EventArgs e)
+        private void RbCheckSymbosl_CheckedChanged(object sender, EventArgs e)
         {
             ProccForm();
         }       
 
-        private void rbCompText_CheckedChanged(object sender, EventArgs e)
+        private void RbCompText_CheckedChanged(object sender, EventArgs e)
         {
             ProccForm();
         }
@@ -43,17 +44,15 @@ namespace ForkWithStrings
             }
         }
 
-        private void btProcess_Click(object sender, EventArgs e)
+        private void BtProcess_Click(object sender, EventArgs e)
         {
-            for (int i = 65; i <= 90; i++)
+            textBoxResult.Text = string.Empty;
+            if (rbCheckSymbosl.Checked)
             {
-                textBox1.AppendText($"{(char)i}={i},\n");
+                MainLang lang = (MainLang)Enum.Parse(typeof(MainLang),
+                    cBLanguage.Text.ToString());
+                BL.ProccesSymbols(textBoxSource.Text, lang, ref textBoxResult);
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

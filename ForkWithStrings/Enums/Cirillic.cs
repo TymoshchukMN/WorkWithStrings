@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿///////////////////////////////////////
+// Author: Tymoshchuk Maksym
+// Created On : 02/11/2023
+// Last Modified On :
+// Description: char`s int of Cirillic alphabet
+// Project: ForkWithStrings
+///////////////////////////////////////
+
 
 namespace ForkWithStrings.Enums
 {

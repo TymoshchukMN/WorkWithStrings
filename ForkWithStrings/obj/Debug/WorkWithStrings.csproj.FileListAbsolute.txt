@@ -1,0 +1,11 @@
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\bin\Debug\ForkWithStrings.exe.config
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\bin\Debug\ForkWithStrings.exe
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\bin\Debug\ForkWithStrings.pdb
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\WorkWithStrings.csproj.AssemblyReference.cache
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\WorkWithStrings.csproj.SuggestedBindingRedirects.cache
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\WorkWithStrings.Form1.resources
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\ForkWithStrings.Properties.Resources.resources
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\WorkWithStrings.csproj.GenerateResource.cache
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\WorkWithStrings.csproj.CoreCompileInputs.cache
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\ForkWithStrings.exe
+C:\Users\tymoshchukmn\source\repos\ForkWithStrings\ForkWithStrings\obj\Debug\ForkWithStrings.pdb

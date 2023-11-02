@@ -1,4 +1,6 @@
-﻿namespace WorkWithStrings
+﻿using System.Windows.Forms;
+
+namespace WorkWithStrings
 {
     partial class Form1
     {
@@ -100,45 +102,48 @@
             this.rbCheckSymbosl.UseVisualStyleBackColor = true;
             this.rbCheckSymbosl.CheckedChanged += new System.EventHandler(this.RbCheckSymbosl_CheckedChanged);
             // 
-            // textBox1
+            // textBoxSource
             // 
-            this.textBoxSource.Location = new System.Drawing.Point(18, 135);
+            this.textBoxSource.Location = new System.Drawing.Point(20, 135);
             this.textBoxSource.Multiline = true;
-            this.textBoxSource.Name = "textBox1";
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSource.Size = new System.Drawing.Size(380, 130);
             this.textBoxSource.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(418, 135);
+            this.textBox2.Location = new System.Drawing.Point(420, 135);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(380, 130);
             this.textBox2.TabIndex = 2;
             // 
             // btProcess
             // 
-            this.btProcess.Location = new System.Drawing.Point(521, 50);
+            this.btProcess.BackColor = System.Drawing.Color.LightGreen;
+            this.btProcess.Location = new System.Drawing.Point(500, 45);
             this.btProcess.Name = "btProcess";
-            this.btProcess.Size = new System.Drawing.Size(75, 25);
+            this.btProcess.Size = new System.Drawing.Size(105, 35);
             this.btProcess.TabIndex = 3;
             this.btProcess.Text = "Обработать";
-            this.btProcess.UseVisualStyleBackColor = true;
+            this.btProcess.UseVisualStyleBackColor = false;
             this.btProcess.Click += new System.EventHandler(this.BtProcess_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 299);
+            this.label1.Location = new System.Drawing.Point(20, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Результат";
+            this.label1.Text = "Результат:";
             // 
-            // textBox3
+            // textBoxResult
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(18, 324);
-            this.textBoxResult.Name = "textBox3";
+            this.textBoxResult.Location = new System.Drawing.Point(20, 325);
+            this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.Size = new System.Drawing.Size(380, 101);
             this.textBoxResult.TabIndex = 6;
             this.textBoxResult.Text = "";
@@ -147,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 634);
+            this.ClientSize = new System.Drawing.Size(984, 631);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btProcess);
@@ -155,7 +160,7 @@
             this.Controls.Add(this.textBoxSource);
             this.Controls.Add(this.workType);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Обработчик текста";
             this.workType.ResumeLayout(false);
             this.workType.PerformLayout();
             this.ResumeLayout(false);

@@ -17,52 +17,31 @@ namespace WorkWithStrings
         {
             InitializeComponent();
         }
-
-        private void RbCheckSymbosl_CheckedChanged(object sender, EventArgs e)
+                
+        private void BtProcess_Click(object sender, EventArgs e)
         {
-            ProccForm();
-        }       
+            const string ExistSympols = "В тексте есть символы другой раскладки";
+            const string NotExistSympols = "В тексте НЕТ символов другой раскладки";
 
-        private void RbCompText_CheckedChanged(object sender, EventArgs e)
-        {
-            ProccForm();
-        }
+            textBoxResult.Text = string.Empty;
+           
+            MainLang lang = (MainLang)Enum.Parse(typeof(MainLang),
+                cBLanguage.Text.ToString());
 
-        private void ProccForm()
-        {
-            if (rbCompText.Checked)
-            { 
-                textComparable.Enabled = true;
-                lbLanguage.Enabled = false;
-                cBLanguage.Enabled = false;
+            BL.ProccesSymbols(
+                textBoxSource.Text,
+                lang,
+                ref textBoxResult,
+                out bool isExistExternalSymbol);
+
+            if (isExistExternalSymbol)
+            {
+                tbMessage.Text = ExistSympols;
             }
             else
             {
-                textComparable.Enabled = false;
-                lbLanguage.Enabled = true;
-                cBLanguage.Enabled = true;
+                tbMessage.Text = NotExistSympols;
             }
         }
-
-        private void BtProcess_Click(object sender, EventArgs e)
-        {
-            textBoxResult.Text = string.Empty;
-            if (rbCheckSymbosl.Checked)
-            {
-                MainLang lang = (MainLang)Enum.Parse(typeof(MainLang),
-                    cBLanguage.Text.ToString());
-                BL.ProccesSymbols(textBoxSource.Text, lang, ref textBoxResult);
-                return;
-            }
-
-            if (rbCompText.Checked)
-            {
-                BL.CompareText(
-                    textBoxSource.Text,
-                    textComparable.Text,
-                    ref textBoxResult);
-            }
-        }
-    
     }
 }

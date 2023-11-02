@@ -32,10 +32,14 @@ namespace ForkWithStrings
             if (rbCompText.Checked)
             { 
                 textBox2.Enabled = true;
+                lbLanguage.Enabled = false;
+                cBLanguage.Enabled = false;
             }
             else
             {
                 textBox2.Enabled = false;
+                lbLanguage.Enabled = true;
+                cBLanguage.Enabled = true;
             }
         }
 
@@ -45,6 +49,11 @@ namespace ForkWithStrings
             {
                 textBox1.AppendText($"{(char)i}={i},\n");
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

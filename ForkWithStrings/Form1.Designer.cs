@@ -36,16 +36,20 @@
             this.btProcess = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbLanguage = new System.Windows.Forms.Label();
+            this.cBLanguage = new System.Windows.Forms.ComboBox();
             this.workType.SuspendLayout();
             this.SuspendLayout();
             // 
             // workType
             // 
+            this.workType.Controls.Add(this.cBLanguage);
+            this.workType.Controls.Add(this.lbLanguage);
             this.workType.Controls.Add(this.rbCompText);
             this.workType.Controls.Add(this.rbCheckSymbosl);
             this.workType.Location = new System.Drawing.Point(12, 12);
             this.workType.Name = "workType";
-            this.workType.Size = new System.Drawing.Size(388, 100);
+            this.workType.Size = new System.Drawing.Size(442, 100);
             this.workType.TabIndex = 0;
             this.workType.TabStop = false;
             this.workType.Text = "Тип работы";
@@ -65,7 +69,7 @@
             // rbCheckSymbosl
             // 
             this.rbCheckSymbosl.AutoSize = true;
-            this.rbCheckSymbosl.Location = new System.Drawing.Point(6, 19);
+            this.rbCheckSymbosl.Location = new System.Drawing.Point(6, 20);
             this.rbCheckSymbosl.Name = "rbCheckSymbosl";
             this.rbCheckSymbosl.Size = new System.Drawing.Size(128, 17);
             this.rbCheckSymbosl.TabIndex = 0;
@@ -92,7 +96,7 @@
             // 
             // btProcess
             // 
-            this.btProcess.Location = new System.Drawing.Point(460, 50);
+            this.btProcess.Location = new System.Drawing.Point(521, 50);
             this.btProcess.Name = "btProcess";
             this.btProcess.Size = new System.Drawing.Size(75, 25);
             this.btProcess.TabIndex = 3;
@@ -116,6 +120,29 @@
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Результат";
+            // 
+            // lbLanguage
+            // 
+            this.lbLanguage.AutoSize = true;
+            this.lbLanguage.Location = new System.Drawing.Point(170, 20);
+            this.lbLanguage.Name = "lbLanguage";
+            this.lbLanguage.Size = new System.Drawing.Size(123, 13);
+            this.lbLanguage.TabIndex = 2;
+            this.lbLanguage.Text = "Основной язык текста";
+            // 
+            // cBLanguage
+            // 
+            this.cBLanguage.FormattingEnabled = true;
+            this.cBLanguage.Items.AddRange(new object[] {
+            "RU",
+            "EN",
+            "UA"});
+            this.cBLanguage.Location = new System.Drawing.Point(299, 16);
+            this.cBLanguage.Name = "cBLanguage";
+            this.cBLanguage.Size = new System.Drawing.Size(121, 21);
+            this.cBLanguage.TabIndex = 3;
+            this.cBLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cBLanguage.SelectedText = "EN";
             // 
             // Form1
             // 
@@ -147,6 +174,8 @@
         private System.Windows.Forms.Button btProcess;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cBLanguage;
+        private System.Windows.Forms.Label lbLanguage;
     }
 }
 

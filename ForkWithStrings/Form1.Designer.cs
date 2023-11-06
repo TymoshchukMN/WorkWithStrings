@@ -108,16 +108,16 @@ namespace WorkWithStrings
             this.textBoxSource.Multiline = true;
             this.textBoxSource.Name = "textBoxSource";
             this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSource.Size = new System.Drawing.Size(380, 130);
+            this.textBoxSource.Size = new System.Drawing.Size(450, 230);
             this.textBoxSource.TabIndex = 1;
             // 
             // textComparable
             // 
-            this.textComparable.Location = new System.Drawing.Point(420, 135);
+            this.textComparable.Location = new System.Drawing.Point(513, 135);
             this.textComparable.Multiline = true;
             this.textComparable.Name = "textComparable";
             this.textComparable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textComparable.Size = new System.Drawing.Size(380, 130);
+            this.textComparable.Size = new System.Drawing.Size(450, 230);
             this.textComparable.TabIndex = 2;
             // 
             // btProcess
@@ -134,7 +134,7 @@ namespace WorkWithStrings
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 300);
+            this.label1.Location = new System.Drawing.Point(17, 368);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 5;
@@ -142,9 +142,12 @@ namespace WorkWithStrings
             // 
             // textBoxResult
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(20, 325);
+            this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxResult.Location = new System.Drawing.Point(20, 394);
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(780, 101);
+            this.textBoxResult.Size = new System.Drawing.Size(943, 281);
             this.textBoxResult.TabIndex = 6;
             this.textBoxResult.Text = "";
             // 
@@ -152,7 +155,8 @@ namespace WorkWithStrings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 443);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(982, 692);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btProcess);

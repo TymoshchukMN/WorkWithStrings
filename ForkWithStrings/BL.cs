@@ -127,15 +127,61 @@ namespace WorkWithStrings
 
             Color defColor = Color.Black;
 
-            for (int i = 0; i < general.Length; i++)
+            if (general.Length > compare.Length)
             {
-                if (strSource[i] == compare[i])
+                for (int i = 0; i < compare.Length; i++)
                 {
-                    AppendText(ref textBox, strSource[i].ToString(), defColor);
+                    if (strSource[i] == compare[i])
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), defColor);
+                    }
+                    else
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), Color.Red);
+                    }
                 }
-                else
+
+                int  k = general.Length - (general.Length - compare.Length);
+
+                for (int i = k; i < general.Length; i++)
                 {
                     AppendText(ref textBox, strSource[i].ToString(), Color.Red);
+                }
+
+            }
+            else if(general.Length < compare.Length)
+            {
+                for (int i = 0; i < general.Length; i++)
+                {
+                    if (strSource[i] == compare[i])
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), defColor);
+                    }
+                    else
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), Color.Red);
+                    }
+                }
+
+                int k = compare.Length - (compare.Length - general.Length);
+
+                for (int i = k; i < compare.Length; i++)
+                {
+                    AppendText(ref textBox, compare[i].ToString(), Color.Red);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < general.Length; i++)
+                {
+                    if (strSource[i] == compare[i])
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), defColor);
+                    }
+                    else
+                    {
+                        AppendText(ref textBox, strSource[i].ToString(), Color.Red);
+                    }
                 }
             }
         }
